@@ -54,8 +54,8 @@ console.log(sumOfCredits);
 }
 
 function returnAverage() {
-    console.log(numberOfSubjects);
-    console.log(sumOfCredits);
+    console.log("total of subjects: ",numberOfSubjects);
+    console.log("total of credits: ",sumOfCredits);
     console.log(parseInt(sumOfCredits) / parseInt(numberOfSubjects));
     return parseInt(sumOfCredits) / parseInt(numberOfSubjects);
 }
