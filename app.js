@@ -5,7 +5,7 @@ var calculateButton = document.getElementById("calculate");
 var resultBox = document.getElementById("result");
 var generateButton = document.getElementById("generateBoxes");
 var numberOfSubjects = 0 ;
-var someOfCredits = 0 ;
+var sumOfCredits = 0 ;
 init();
 
 function init() {
@@ -46,15 +46,18 @@ function calculateCredits() {
     for (var i=1; i <= numberOfSubjects; i++) {
         var inputElemValue = document.getElementById("input" + i).value;
         console.log(inputElemValue);
-        someOfCredits +=  parseInt(inputElemValue) ;
+        sumOfCredits +=  parseInt(inputElemValue) ;
     }
-console.log(someOfCredits);
-    document.getElementById("sumOfCredits").innerHTML = someOfCredits;
+console.log(sumOfCredits);
+    document.getElementById("sumOfCredits").innerHTML = sumOfCredits;
     document.getElementById("averageCredits").innerHTML = returnAverage();
 }
 
 function returnAverage() {
-    return sumOfCredits / numberOfSubjects;
+    console.log(numberOfSubjects);
+    console.log(sumOfCredits);
+    console.log(parseInt(sumOfCredits) / parseInt(numberOfSubjects));
+    return parseInt(sumOfCredits) / parseInt(numberOfSubjects);
 }
 
 
