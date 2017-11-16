@@ -4,7 +4,7 @@ var missingCredits;
 var calculateButton = document.getElementById("calculate");
 var resultBox = document.getElementById("result");
 var generateButton = document.getElementById("generateBoxes");
-var numberOfBoxes = 0 ;
+var numberOfSubjects = 0 ;
 var someOfCredits = 0 ;
 init();
 
@@ -38,19 +38,23 @@ function createBoxes(numberOfBoxes) {
 }
 
 function generate() {
-     numberOfBoxes = document.getElementById("numberOfBoxes").value;
-    createBoxes(numberOfBoxes);
+     numberOfSubjects = document.getElementById("numberOfSubjects").value;
+    createBoxes(numberOfSubjects);
 }
 
 function calculateCredits() {
-    for (var i=1; i <= numberOfBoxes; i++) {
+    for (var i=1; i <= numberOfSubjects; i++) {
         var inputElemValue = document.getElementById("input" + i).value;
         console.log(inputElemValue);
         someOfCredits +=  parseInt(inputElemValue) ;
     }
 console.log(someOfCredits);
     document.getElementById("sumOfCredits").innerHTML = someOfCredits;
+    document.getElementById("averageCredits").innerHTML = returnAverage();
+}
 
+function returnAverage() {
+    return sumOfCredits / numberOfSubjects;
 }
 
 
